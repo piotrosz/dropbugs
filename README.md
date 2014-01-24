@@ -14,6 +14,8 @@ Microsoft Katana application
 - [TypeScript](http://www.typescriptlang.org/)
 - HTML 5 drag & drop
 
+[See it live!](http://dropbugs.azurewebsites.net/)
+
 Screenshot:
 
 ![Screenshot](https://raw2.github.com/piotrosz/dropbugs/master/screenshot.png)
