@@ -6,7 +6,7 @@ Drag & drop bugs into categories.
 Simple Microsoft Katana application.
 
 - [Katana](http://www.asp.net/vnext/overview/owin-and-katana)
-- [SignalR](http://signalr.net/)
+- [SignalR](http://signalr.net/) (real time notifications!)
 - [KnockoutJS](http://knockoutjs.com/)
 - [Nancy](http://nancyfx.org/)
 - [Bootstrap](http://getbootstrap.com/)
