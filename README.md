@@ -12,5 +12,6 @@ Microsoft Katana application
 - [SignalR](http://signalr.net/)
 - [ASP.NET Web API 2](http://www.asp.net/vnext/overview/aspnet-web-api)
 - [TypeScript](http://www.typescriptlang.org/)
+- HTML 5 drag & drop
 
-![Screenshot](https://raw.github.com/piotrosz/dropbugs/master/screenshot.png)
+![Screenshot](https://raw2.github.com/piotrosz/dropbugs/master/screenshot.png)
