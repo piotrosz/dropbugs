@@ -1,0 +1,77 @@
+﻿@model KatanaBugTracker.ViewModels.HomeViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Model.Title</title>
+    <script src="~/Scripts/jquery-2.0.3.js"></script>
+    <script src="~/Scripts/knockout-3.0.0.js"></script>
+    <script src="~/Scripts/app.js"></script>
+
+    @* Twitter Bootstrap *@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap.js"></script>
+
+    @* SignalR *@
+    <script src="~/Scripts/jquery.signalR-2.0.1.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <style type="text/css">
+        /* Prevent the text contents of draggable elements from being selectable. */
+        [draggable] {
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            /* Required to make elements draggable in old WebKit */
+            -khtml-user-drag: element;
+            -webkit-user-drag: element;
+        }
+
+        .dragover-border {
+            border: 2px dashed orange;
+        }
+
+        .draggable {
+            cursor: move;
+        }
+
+        .badge-info {
+            background-color: #3a87ad;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>@Model.Title</h1>
+        </header>
+
+        <section data-bind="foreach:Zones">
+            <h4 data-bind="text: Name"></h4>
+
+            <div data-bind="event: { dragover: DragAndDropUtility.handleDragOver, drop: DragAndDropUtility.handleDrop,dragenter: DragAndDropUtility.handleDragEnter }">
+                <div class="alert alert-danger" data-bind="visible: Bugs().length == 0, css: {'dragover-border': $root.dragOverState() == State}">
+                    <p>There are no bugs in this zone</p>
+                </div>
+
+                <div class="list-group" id="backlog" data-bind="foreach:Bugs, css: {'dragover-border': $root.dragOverState() == State && Bugs().length > 0}">
+                    <div draggable="true" class="list-group-item alert draggable"
+                         data-bind="event: { dragstart: DragAndDropUtility.handleDragStart, dragend: DragAndDropUtility.handleDragEnd},
+                                css: {'alert-success': $root.draggingBug() == $data}">
+                        <p>
+                            <span class="badge badge-info" data-bind="text: Id"></span>
+                            <strong><span data-bind="text: Title"></span></strong>
+                            <br />
+                            <span data-bind="text: Description"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
