@@ -136,6 +136,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -145,10 +146,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Scripts\app.js.map" />
+    <Content Include="Scripts\app\app.js.map" />
+    <Content Include="Scripts\app\DragAndDropUtility.js.map" />
+    <Content Include="Scripts\app\signalrsetup.js.map" />
+    <Content Include="Scripts\app\viewmodel.js.map" />
     <None Include="Scripts\jquery-2.0.3.intellisense.js" />
-    <TypeScriptCompile Include="Scripts\app.ts" />
-    <Content Include="Scripts\app.js" />
+    <TypeScriptCompile Include="Scripts\app\app.ts" />
+    <Content Include="Scripts\app\app.js" />
+    <Content Include="Scripts\app\DragAndDropUtility.js" />
+    <Content Include="Scripts\app\signalrsetup.js" />
+    <Content Include="Scripts\app\viewmodel.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.0.3.js" />
@@ -165,6 +172,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <TypeScriptCompile Include="Scripts\app\DragAndDropUtility.ts" />
+    <TypeScriptCompile Include="Scripts\app\SignalRSetup.ts" />
+    <TypeScriptCompile Include="Scripts\app\ViewModel.ts" />
     <TypeScriptCompile Include="Scripts\typings\signalr\signalr.d.ts" />
   </ItemGroup>
   <ItemGroup>
